@@ -18,12 +18,13 @@ require("lazy").setup({
   },
   spec = {
     { import = "plugins" },
+    { import = "myplugins" },
   },
   ui = {
     border = "rounded",
     backdrop = 60,
   },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { enabled = true, frequency = 3600 * 24 * 7 }, -- automatically check for plugin updates
   performance = {
     rtp = {
       disabled_plugins = {

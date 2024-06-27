@@ -1,0 +1,91 @@
+- [x] init.lua
+- [x] lazy-lock.json
+- [x] LICENSE
+- [x] lua
+  - [x] config
+    - [x] autocmds.lua 一些自动化命令
+    - [x] icons.lua 一些图标
+    - [x] keymaps.lua
+    - [x] lazy.lua lazyvim 加载的部分，并设置自动检查更新
+    - [x] options.lua 一些开关和配置
+  - [x] lspservers
+    - [x] basedpyright.lua
+    - [x] bashls.lua
+    - [x] cssls.lua
+    - [x] cssmodules_ls.lua
+    - [x] emmet_ls.lua
+    - [x] gopls.lua
+    - [x] html.lua
+    - [x] jsonls.lua
+    - [x] ltex.lua
+    - [x] lua_ls.lua
+    - [x] pyright.lua
+    - [x] ruff_lsp.lua
+    - [x] ruff.lua
+    - [x] tailwindcss.lua
+    - [x] tsserver.lua
+    - [x] vimls.lua
+    - [x] vuels.lua
+  - [x] plugins
+    - [x] ai.lua 一些 ai 插件
+    - [x] bufferline.lua  文件栏
+    - [ ] ~~cheatsheet.lua~~
+    - [x] cmp.lua  补全
+    - [x] colorizer.lua  显示颜色代码块颜色
+    - [x] colorscheme.lua  主题
+    - [x] conform.lua  代码格式化
+    - [x] cursorword.lua 相同代码高亮，无所谓
+    - [x] dashboard.lua 首页，无所谓
+    - [x] debugprint.lua 快速打印 debug 日志，目前默认定义的是 print，无所谓
+    - [x] dressing.lua 一个外观插件，定义当前的搜索框、重命名显示 可能无所谓
+    - [x] dropbar.lua 显示文件路径和函数层级
+    - [x] fzf-lua.lua 和 telescope 功能完全重合，不过样式稍微好看一些，略显重复吧
+    - [x] gitsigns.lua git 高亮，preview 等功能，目前 gitsigns 的 show 功能是有 bug 的
+    - [x] glance.lua 使用类似 vscode 的方式查看 define 和 references，和 lsp 功能重复，无所谓
+    - [x] incline.lua 悬浮的状态栏，目前显示在右上角
+    - [x] indent.lua 缩进显示，包括 indent（竖线），blank（空白），line_num（数字线），scope（区块范围）
+    - [x] joshuto.lua vim 中使用 joshuto，joshuto 是一个类似 ranger 的工具，使用 rust 开发
+    - [x] lint.lua 代码风格提示，不知道为什么在 python 中不太生效，直接修改 testNvim 进行测试，确实 python 中使用 ruff 不咋生效，但是 flake8 可以生效，推测是 ruff 的问题，确定是配置文件的问题
+    - [x] lspconfig.lua 只是看完了配置，并未了解其中所有的内容
+      - [x] neodev 用于修改在 neovim 配置或者插件中的 Luals 的配置，方便其进行补全
+      - [x] folke/neoconf.nvim 简单来说，是使用 json 来配置 lsp，并提供 lsp 的一些自动补全功能
+      - [x] williamboman/mason-lspconfig.nvim 用来获取 mason 安装过的 lsp
+    - [x] lualine.lua 状态栏，需要进行修改，显示额外的信息，包括 mode，宏状态，应该不难，稍微借鉴下去
+    - [x] markdown.lua 包含两个插件，一个是预览插件，一个是 md 文件显示插件，例如超链接自动显示链接名称等（这个感觉反而有点不直观）
+    - [x] mason.lua  记得加载，否则 lint 插件需要的工具等都未在 path 中。自动安装 lsp 的插件
+    - [x] mini.lua 包含一堆 mini 系列插件，提供了很多小功能
+      - [x] mini.comment 注释插件
+      - [x] mini.surround 提供自动增加、修改、删除括号、引号等内容。
+      - [x] mini.pairs 自动不全括号，引号，非常好用
+      - [x] mini.bufremove 关闭 buffer 时，询问是否自动保存，感觉没啥用，毕竟现在自动保存
+      - [x] mini.move 本行或者选中的块上下左右移动，和目前 flowterm 有点冲突
+    - [x] multicursors.lua 多光标模式，可以实现多光标同时编辑，另外可以进行对齐操作
+      - [x] 依赖于 smoka7/hydra.nvim 这个貌似是 emacs 的操作模式相关的
+    - [x] neogen.lua 便捷添加注释的插件
+    - [x] neo-tree.lua 文件树，支持显示 git 状态，重命名文件时，调用 utils 中的方法，自动替换对应代码中文件名，增加函数 Y 来复制文件路径 O 来以系统命令打开
+    - [x] noice.lua ui 组件，commandline, notify, popup 等组件都修改了ui
+      - [x] MunifTanjim/nui.nvim 一个 nvim 的 ui 组件库
+    - [x] notify.lua 也是 noice 的一个依赖，提供一种 view 视图，右上角的显示就是 notify 提供的
+    - [x] nvim-dap.lua debug 使用的，在开发 python 的时候，基本是不用的，只能说让 vim 具备断点调试的能力，加上 ui 之后体验还不错，就是不太熟悉
+    - [x] nvim-web-devicons.lua 提供自定义图标
+    - [x] outline.lua 显示大纲，需要 lsp 来配合，依赖于 lsp
+    - [x] persistence.lua 用来存储 session 和还原 session
+    - [x] plenary.lua 一个 neovim lua 库，支持异步等一些功能
+    - [x] rainbow.lua 提供彩虹括号，很好用
+    - [x] spectre.lua 一个全局替换插件，还是挺好用的
+    - [x] startup.lua 分析启动耗时的插件
+    - [x] switch.lua 快捷的获取反义词，同时完成驼峰转snake
+    - [x] telescope.lua 提供各种快捷搜索
+    - [x] tmux.lua 提供 vim 在 tmux 中的增强，包括共用剪贴板，移动和缩放
+    - [x] todo-comments.lua 支持 todo 搜索，高亮等
+    - [x] toggleterm.lua 提供更好的 terminal 支持，暂时还是继续使用 float-terminal，等待后续
+    - [x] treesitter.lua 提供语法高亮和移动相关的
+      - [x] nvim-treesitter/nvim-treesitter-textobjects 和 treesitter 来配合，用于函数、类之间的快速跳转等
+    - [x] trouble.lua 用来快速显示当前的问题的列表，并带跳转功能
+    - [x] venv-selector.lua 提供 python 的自动选择虚拟环境，根据 pyproject.toml
+    - [x] vim-tmux-navigator.lua 和 tmux.lua 类似，提供移动功能
+    - [x] which-key.lua 展示有哪些快捷键
+  - [x] utils
+      - [x] ui.lua 感觉包含 git 状态在行号右边，折叠，git blame 相关的 ui 变动
+- [x] pyproject.toml ruff lint, format 使用的配置文件
+- [x] README.md
