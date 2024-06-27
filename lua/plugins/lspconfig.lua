@@ -85,11 +85,17 @@ return {
     -- setup lspservers
     local mason_lspconfig = require("mason-lspconfig")
     for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
+      local my_require_path = string.format("%s%s", "mylspservers/", server_name)
+      local my_ok, my_settings = pcall(require, my_require_path)
+      if not my_ok then
+        my_settings = nil
+      end
       local require_path = string.format("%s%s", "lspservers/", server_name)
       local ok, settings = pcall(require, require_path)
       if not ok then
         settings = {}
       end
+      settings = my_settings or settings
       if settings.enabled == false then
         goto continue
       end
