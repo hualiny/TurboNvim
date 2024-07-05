@@ -14,13 +14,15 @@ return {
       { "<A-l>", "<C-\\><C-n><Cmd>FloatermNext<CR>", desc = "NeoTree", mode = "t" },
       { "<A-j>", "<Cmd>FloatermToggle<CR>", desc = "NeoTree", mode = "n" },
       { "<A-j>", "<C-\\><C-n><Cmd>FloatermToggle<CR>", desc = "NeoTree", mode = "t" },
+      { "<A-m>", "<Cmd>FloatermNew lazygit<CR>", desc = "NeoTree", mode = "n" },
+      { "<A-m>", "<C-\\><C-n><Cmd>FloatermToggle<CR>", desc = "NeoTree", mode = "t" },
       { "<esc>", "<C-\\><C-n>", desc = "NeoTree", mode = "t" },
     },
     init = function()
-      vim.g.floaterm_height = 0.8
-      vim.g.floaterm_position = "top"
+      vim.g.floaterm_height = 0.9
+      vim.g.floaterm_width = 0.9
+      vim.g.floaterm_position = "center"
       vim.g.floaterm_opener = "edit"
-      vim.cmd("let g:floaterm_width = 1.0")
     end,
   },
 }
